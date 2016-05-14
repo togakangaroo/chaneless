@@ -3,7 +3,8 @@ const diff = require('virtual-dom/diff');
 const patch = require('virtual-dom/patch');
 const createElement = require('virtual-dom/create-element');
 
-const style = name => h('link', {href: `${__dirname}/${name}.css`, rel:"stylesheet"})
+const style = require('./common/style')
+
 
 const renderFilters = filters => h('section#filters', {}, h('h1', {}, "Filters") )
 const renderMessages = state => h('section#messages', {}, h('h1', {}, "Messages") )

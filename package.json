@@ -16,5 +16,8 @@
   "devDependencies": {
     "electron-prebuilt": "^1.0.2",
     "virtual-dom": "^2.1.1"
+  },
+  "dependencies": {
+    "callsite": "^1.0.0"
   }
 }
