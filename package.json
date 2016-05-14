@@ -1,0 +1,19 @@
+{
+  "name": "channeless",
+  "version": "0.0.0",
+  "description": "channeless chat client",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron app.js",
+    "test": "test"
+  },
+  "keywords": [
+    "chat",
+    "client"
+  ],
+  "author": "gmauer@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "electron-prebuilt": "^1.0.2"
+  }
+}
