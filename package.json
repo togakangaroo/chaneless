@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "callsite": "^1.0.0",
+    "classnames": "^2.2.5",
     "gimgen": "github:togakangaroo/gimgen",
     "randomcolor": "^0.4.4"
   }

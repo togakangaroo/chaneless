@@ -1,6 +1,7 @@
 const h = require(`${baseDir}/ui/common/dom`).h;
 const style = require(`${baseDir}/ui/common/style`)
-const showRelated = require(`${baseDir}/domain/actions/showRelated`)
+const { showRelated, indicateRelated, indicateAllRelated } = require(`${baseDir}/domain/actions/relatedMessages`)
+const classNames = require('classnames')
 
 const smallIndividual = ({name, logo}) =>
 	h('figure.individual.small', [
@@ -15,7 +16,9 @@ const smallTags = tags =>
 const message = m =>
 	h('section', {
 		onclick: () => showRelated(m),
-		className: m.isVisible ? '' : 'hidden',
+		className: classNames({'hidden': !m.isVisible, 'unrelated': m.isUnrelated}),
+		onmouseenter: () => indicateRelated(m),
+		onmouseleave: () => indicateAllRelated(m),
 	}, [
 		smallTags(m.tags),
 		smallIndividual(m),

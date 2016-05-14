@@ -16,12 +16,17 @@
 	flex-direction: row;
 	align-items: center;
 	max-height: 10em;
-	transition: max-height 1s;
+	opacity: 1;
+	transition: max-height 1s, opacity 2s;
 }
 #messages .message-list>li>section.hidden {
 	margin: 0;
 	overflow: hidden;
 	max-height: 0;
+}
+#messages .message-list>li>section.unrelated {
+	opacity: 0;
+	transition: opacity 10s;
 }
 
 #messages .logo {

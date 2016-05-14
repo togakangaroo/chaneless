@@ -17,7 +17,10 @@ const selRand = (...arr) => arr[Math.floor(Math.random()*arr.length)]
 const p = (name, msg) => {
 	if(!people.has(name))
 		createPerson(name, selRand('grad.png', 'koala.jpg', 'superhappy.png'))
-	return Object.assign({isVisible: true}, msg, people.get(name))
+	return Object.assign({
+		isVisible: true,
+		isUnrelated: false,
+	}, msg, people.get(name))
 }
 const m = (text, ...tags) => ({ text, tags: tags.map(getTag) })
 
