@@ -27,11 +27,11 @@ const message = m =>
 	])
 
 module.exports = ({messages}) =>
-h('section#messages', [
-	style('style'),
-	style('tags'),
-	h('h1', "Messages"),
-	h('ul.message-list', messages.map(m =>
-		h('li', message(m) )
-	) )
-])
+	h('section#messages', [
+		style('style'),
+		style('tags'),
+		h('h1', "Messages"),
+		h('ul.message-list', messages.map(m =>
+			h('li', message(m) )
+		) )
+	])

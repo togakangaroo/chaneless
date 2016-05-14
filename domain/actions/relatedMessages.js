@@ -7,15 +7,16 @@ const tagsOverlap = ({tags}, tags2) => {
 	return false;
 }
 
-const markRelatedAs = change => target => {
-	const tagsSet = new Set(target.tags.map(t => t.name))
+const markAllMessages = change => (target ={}) => {
+	const tagsSet = new Set((target.tags||[]).map(t => t.name))
 	enqueAction( ({messages}) => ({
 		messages: messages.map(m => Object.assign({}, m, change(m, tagsSet) ))
 	}) )
 }
 
 module.exports = {
-	showRelated: markRelatedAs((m, tagsSet) => ({isVisible: tagsOverlap(m, tagsSet)}) ),
-	indicateRelated: markRelatedAs((m, tagsSet) => ({isUnrelated: !tagsOverlap(m, tagsSet)}) ),
-	indicateAllRelated: markRelatedAs(() => ({isUnrelated: false}) ),
+	showRelated: markAllMessages((m, tagsSet) => ({isVisible: tagsOverlap(m, tagsSet)}) ),
+	showAll: markAllMessages(() => ({isVisible: true}) ),
+	indicateRelated: markAllMessages((m, tagsSet) => ({isUnrelated: !tagsOverlap(m, tagsSet)}) ),
+	indicateAllRelated: markAllMessages(() => ({isUnrelated: false}) ),
 }
