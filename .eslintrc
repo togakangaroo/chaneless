@@ -1,0 +1,39 @@
+{
+ "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+
+        }
+    },
+    "rules": {
+        "indent": [
+            0,
+            "tab"
+        ],
+        "quotes": [
+            0,
+            "single"
+        ],
+        "linebreak-style": [
+            0,
+            "windows"
+        ],
+        "semi": [
+            0,
+            "never"
+        ],
+        "comma-dangle": [0],
+        "no-constant-condition": [0]
+    },
+    "env": {
+        "es6": true,
+        "node": true,
+        "mocha": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+    },
+    "plugins": [
+    ]
+}
