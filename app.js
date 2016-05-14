@@ -5,7 +5,7 @@ const BrowserWindow = electron.BrowserWindow // Module to create native browser 
 let mainWindow
 
 const createWindow = () => {
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow()
 
   mainWindow.loadURL(`file://${__dirname}/ui/main.html`)
 

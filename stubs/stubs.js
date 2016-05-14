@@ -1,5 +1,5 @@
 const people = new Map()
-const createPerson = (name, logo) => people.set(name, { name, logo: `/stubs/${logo}` })
+const createPerson = (name, logo) => people.set(name, { name, logo: `${baseDir}/stubs/${logo}` })
 const selRand = (...arr) => arr[Math.floor(Math.random()*arr.length)]
 
 const p = (name, msg) => {

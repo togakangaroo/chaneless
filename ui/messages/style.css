@@ -1,3 +1,17 @@
 #messages {
 	flex: 1;
 }
+
+#messages .message-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#messages .message-list>li>section {
+	border-bottom: 1px solid #AAA;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
