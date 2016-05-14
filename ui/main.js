@@ -4,17 +4,20 @@ const { runGimgen, timeoutSignal } = require('gimgen/dist/gimgen')
 
 const style = require('./common/style')
 const messages = require('./messages')
+const filters = require('./filters')
 
-const h = require('virtual-dom/h');
-const renderFilters = filters => h('section#filters', {}, h('h1', {}, "Filters") )
-const renderInput = state => h('section#input', {}, h('h1', {}, "Input") )
+const { h } = require('./common/dom');
+const input = state => h('section#input', [
+  h('input', {placeholder: "Your message"}),
+  h('button', "Post"),
+])
 
 const render = state =>
     h('main', { }, [
       style('main'),
-      renderFilters(state.filters),
+      filters(state),
       messages(state),
-      renderInput(state),
+      input(state),
     ])
 
 const stubs = require('../stubs/stubs')
