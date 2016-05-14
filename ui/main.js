@@ -1,9 +1,6 @@
 global.baseDir = `${__dirname}/..`
 
 const h = require('virtual-dom/h');
-const diff = require('virtual-dom/diff');
-const patch = require('virtual-dom/patch');
-const createElement = require('virtual-dom/create-element');
 
 const style = require('./common/style')
 const messages = require('./messages')
@@ -20,7 +17,7 @@ const render = state =>
       renderInput(state),
     ])
 
-const stubs = require('../stubs/stubs')
-const tree = render(stubs);
-const rootNode = createElement(tree);
-document.body.querySelector('.application').appendChild(rootNode);
+let state = require('../stubs/stubs')
+const { applyQueue } = require('./rendering')
+state = applyQueue(state, render)
+setInterval(()=> state = applyQueue(state, render), 33)

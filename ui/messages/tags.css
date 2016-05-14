@@ -1,0 +1,10 @@
+.tag-splotch {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+}
+
+ul.tags {
+	list-style-type: none;
+	padding: 0;
+}

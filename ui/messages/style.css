@@ -1,5 +1,6 @@
 #messages {
 	flex: 1;
+	padding: 0 10px
 }
 
 #messages .message-list {
@@ -14,4 +15,20 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	max-height: 10em;
+	transition: max-height 1s;
+}
+#messages .message-list>li>section.hidden {
+	margin: 0;
+	overflow: hidden;
+	max-height: 0;
+}
+
+#messages .logo {
+	width: 35px;
+	heigh: 35px;
+}
+
+#messages .message {
+	margin-right: auto;
 }

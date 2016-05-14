@@ -1,13 +1,25 @@
 const people = new Map()
 const createPerson = (name, logo) => people.set(name, { name, logo: `${baseDir}/stubs/${logo}` })
+const tags = new Map()
+const randomColor = require('randomcolor')
+const colors = new Set(randomColor({count: 36}))[Symbol.iterator]()
+const getTag = name => {
+	if(tags.has(name))
+		return tags.get(name)
+	const {value: color, done} = colors.next()
+	if(done) throw Error("Too many tags, not enough colors!")
+	tags.set(name, {name, color})
+	return getTag(name)
+}
+
 const selRand = (...arr) => arr[Math.floor(Math.random()*arr.length)]
 
 const p = (name, msg) => {
 	if(!people.has(name))
 		createPerson(name, selRand('grad.png', 'koala.jpg', 'superhappy.png'))
-	return Object.assign({}, msg, people.get(name))
+	return Object.assign({isVisible: true}, msg, people.get(name))
 }
-const m = (text, ...tags) => ({ text, tags })
+const m = (text, ...tags) => ({ text, tags: tags.map(getTag) })
 
 module.exports = {
 	messages: [

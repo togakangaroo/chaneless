@@ -33,6 +33,8 @@
     },
     "extends": "eslint:recommended",
     "globals": {
+      "baseDir": true,
+      "document": true
     },
     "plugins": [
     ]
