@@ -31,10 +31,12 @@ module.exports = {
 	filters: {},
 	messages: [
 		p("George", m("Boooring", 'gchat', 'gmauer', 'Laura' )),
+		p("Daria", m("Coding tonight, I'm pretty good at it no big deal", 'hackathon', 'nola', 'slack' )),
 		p("Fred", m("Hey guys", 'general', 'slack', 'nola' )),
 		p("Phil", m("Whats up Fred?", 'general', 'slack', 'nola' )),
 		p("Bill", m("Anyone want to go camping?", 'camping', 'discord' )),
 		p("Fred", m("Man, I'm having a hard day", 'general', 'slack', 'nola' )),
 		p("Jen", m("Don't go to black bear, I got eaten by a bear last week. Had to fight my way out.", 'camping', 'discord' )),
+		p("Denis", m("might be eaten by a black bear at this hackathon as well", 'hackathon', 'nola', 'slack' )),
 	],
 }

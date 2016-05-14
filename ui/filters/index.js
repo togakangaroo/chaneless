@@ -9,13 +9,11 @@ const expandedTag = ({color, name, char}) =>
 		h('.name', name)
 	])
 
-const tagsFor = messages =>
-	[ ...messages.reduce((s, m) => (m.tags.forEach(t => s.add(t)), s), new Set()) ]
-const filterSelector = ({messages}) =>
+const filterSelector = ({tags}) =>
 	h('aside.new-filter', {}, [
 		h('h1', "Filter Selectors"),
 		h('ul',
-			tagsFor(messages).map(t =>
+			tags.map(t =>
 				h('li', expandedTag(t))
 			)
 		),
@@ -25,8 +23,8 @@ const filterSelector = ({messages}) =>
 module.exports = ({filters: { newFilter }, messages}) =>
 	h('section#filters', [
 		h('h1', "Filters"),
-		newFilter && filterSelector({newFilter, messages}),
+		newFilter && filterSelector(newFilter),
 		h('button', {
-			onclick: startAddNewFilter
+			onclick: () => startAddNewFilter(messages)
 		}, "+")
 	])

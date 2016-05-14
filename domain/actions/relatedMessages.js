@@ -2,9 +2,9 @@ const {enqueAction} = require(`${baseDir}/ui/rendering`)
 
 const tagsOverlap = ({tags}, tags2) => {
 	for(let t of tags)
-		if(tags2.has(t.name))
-			return true;
-	return false;
+		if(!tags2.has(t.name))
+			return false
+	return true;
 }
 
 const markAllMessages = change => (target ={}) => {
