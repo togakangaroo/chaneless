@@ -4,10 +4,9 @@ const patch = require('virtual-dom/patch');
 const createElement = require('virtual-dom/create-element');
 
 const style = require('./common/style')
-
+const messages = require('./messages')
 
 const renderFilters = filters => h('section#filters', {}, h('h1', {}, "Filters") )
-const renderMessages = state => h('section#messages', {}, h('h1', {}, "Messages") )
 const renderInput = state => h('section#input', {}, h('h1', {}, "Input") )
 
 
@@ -15,7 +14,7 @@ const render = state =>
     h('main', { }, [
       style('main'),
       renderFilters(state.filters),
-      renderMessages(state),
+      messages(state),
       renderInput(state),
     ])
 

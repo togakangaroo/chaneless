@@ -1,11 +1,11 @@
 const people = new Map()
-const createPerson = (name, logo) => people.set(name, { name, logo: `${__dirname}/stubs/${logo}` })
+const createPerson = (name, logo) => people.set(name, { name, logo: `/stubs/${logo}` })
 const selRand = (...arr) => arr[Math.floor(Math.random()*arr.length)]
 
 const p = (name, msg) => {
 	if(!people.has(name))
 		createPerson(name, selRand('grad.png', 'koala.jpg', 'superhappy.png'))
-	Object.assign({}, msg, people.get(name))
+	return Object.assign({}, msg, people.get(name))
 }
 const m = (text, ...tags) => ({ text, tags })
 
