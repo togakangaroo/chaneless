@@ -1,5 +1,5 @@
 const h = require('virtual-dom/h');
-const style = require('../common/style')
+const style = require(`${baseDir}/ui/common/style`)
 
 const message = (m) => m.text
 
